@@ -1,0 +1,36 @@
+/*reset 重置*/
+body,ul,ol,p,h1,h2,h3,h4,h5,dl,dd,form,input,textarea,
+td,th,button,strong,em,select,video,canvas{margin:0;padding:0;}
+li{list-style:none;vertical-align:top;}
+table{ border-collapse:collapse;}
+textarea{resize:none;overflow:auto;}
+img{ border:none; vertical-align:middle;}
+em{ font-style:normal;}
+a{ text-decoration:none;}
+a,input,div,img,canvas{
+    -webkit-appearance: none;/*屏蔽阴影*/
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+    /*ios android去除自带阴影的样式*/
+}
+input {
+    background: none;
+    outline: none;
+    border: none;
+}
+html, body, #app {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    /*overflow: hidden;*/
+}
+#app {
+    font-family: 'Microsoft YaHei';
+    background-color: #e8e62f;
+}
+.page, .content {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
