@@ -13,7 +13,7 @@ export default new Router({
       component: Home
     },
     {
-      path: '/share',
+      path: '/share/:questions/:answers',
       name: 'share',
       component: Share
     }

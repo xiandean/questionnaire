@@ -1,6 +1,6 @@
 <template>
   <div class="btns">
-    <div class="btn-create"></div>
+    <div class="btn-create" @touchstart="togglePage()"></div>
     <div class="btn-rule" @touchstart="toggleRule"></div>
   </div>
 </template>
@@ -9,6 +9,9 @@ export default {
   methods: {
     toggleRule () {
       this.$emit('toggleRule')
+    },
+    togglePage (i) {
+      this.$emit('togglePage', i)
     }
   }
 }

@@ -2,14 +2,19 @@
   <div class="answer-question-box">
     <div class="answer-question-title"><img :src="question.question"></div>
       <div class="answer-question-btn-box">
-        <a href="javascript:void(0);" v-for="answer in question.answers"><img :src="answer"></a>
+        <a href="javascript:void(0);" v-for="(answer, index) in question.answers" @touchstart="selectAnswer(index, question.answerIndex)" :class="{active: answerIndex === index}"><img :src="answer"></a>
       </div>
   </div>
 </template>
 
 <script>
 export default {
-  props: ['question']
+  props: ['question', 'answerIndex'],
+  methods: {
+    selectAnswer (index, rightIndex) {
+      this.$emit('selectAnswer', index, rightIndex)
+    }
+  }
 }
 </script>
 

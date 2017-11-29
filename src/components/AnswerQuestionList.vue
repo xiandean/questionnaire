@@ -1,12 +1,23 @@
 <template>
   <div class="answer-question-list">
-    <answer-question-box v-for="question in questions" :key="question.id" :question="question"></answer-question-box>
+    <answer-question-box v-for="question in questions" :key="question.id" :question="question" :answerIndex="answerIndex" v-show="question.id === questionId" @selectAnswer="selectAnswer"></answer-question-box>
   </div>
 </template>
 <script>
 import AnswerQuestionBox from '../components/AnswerQuestionBox'
 export default {
-  props: ['questions'],
+  props: ['questions', 'questionId', 'answerIndex'],
+  methods: {
+    selectAnswer (answerIndex, rightAnswerIndex) {
+      this.$emit('selectAnswer', answerIndex, rightAnswerIndex)
+    },
+    nextQuestion () {
+      this.$emit('nextQuestion')
+    },
+    changeQuestion () {
+      this.$emit('changeQuestion')
+    }
+  },
   components: {
     AnswerQuestionBox
   }

@@ -4,13 +4,13 @@
       <loading></loading>
     </div>
     <div class="page" v-show="currentPage === 1">
-      <share-page-one></share-page-one>
+      <share-page-one @togglePage="togglePage"></share-page-one>
     </div>
     <div class="page" v-show="currentPage === 2">
-      <page-award></page-award>
+      <page-question @togglePage="togglePage"></page-question>
     </div>
     <div class="page" v-show="currentPage === 3">
-      <page-question></page-question>
+      <page-award></page-award>
     </div>
     <div class="page" v-show="currentPage === 4">
       <share-page-result></share-page-result>
@@ -39,6 +39,15 @@ export default {
       isGuide: false,
       isRule: false,
       currentPage: 1
+    }
+  },
+  methods: {
+    togglePage (i) {
+      if (i !== undefined) {
+        this.currentPage = i
+      } else {
+        this.currentPage++
+      }
     }
   },
   components: {

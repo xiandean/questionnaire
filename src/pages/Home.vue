@@ -4,19 +4,19 @@
       <loading></loading>
     </div>
     <div class="page" v-show="currentPage === 1">
-      <page-one @toggleRule="toggleRule"></page-one>
+      <page-one @toggleRule="toggleRule" @togglePage="togglePage"></page-one>
     </div>
     <div class="page" v-show="currentPage === 2">
-      <page-award></page-award>
+      <page-question @togglePage="togglePage"></page-question>
     </div>
     <div class="page" v-show="currentPage === 3">
-      <page-question></page-question>
+      <page-award></page-award>
     </div>
     <div class="page" v-if="isGuide">
       <guide></guide>
     </div>
     <div class="page" v-show="isRule">
-      <rule></rule>
+      <rule @toggleRule="toggleRule"></rule>
     </div>
   </div>
 </template>
@@ -38,7 +38,12 @@ export default {
   },
   methods: {
     togglePage (i) {
-      this.currentPage = i
+      console.log(i)
+      if (i !== undefined) {
+        this.currentPage = i
+      } else {
+        this.currentPage++
+      }
     },
     toggleRule () {
       this.isRule = !this.isRule

@@ -1,11 +1,17 @@
 <template>
   <div class="btns">
-    <div class="btn-test"></div>
-    <div class="btn-award"></div>
+    <div class="btn-test" @touchstart="togglePage()"></div>
+    <div class="btn-award" @touchstart="togglePage(3)"></div>
   </div>
 </template>
 <script>
-
+export default {
+  methods: {
+    togglePage (i) {
+      this.$emit('togglePage', i)
+    }
+  }
+}
 </script>
 <style scoped>
 .btns {

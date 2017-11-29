@@ -1,16 +1,16 @@
 <template>
   <div class="content">
-    <div class="award-title"></div>
-    <div class="award-title"></div>
+    <div class="award-title" v-show="awardTimes === 1"></div>
+    <div class="award-title" v-show="awardTimes === 0"></div>
     <div class="award-box">
       <div class="award-rotate"></div>
       <div class="award-point"></div>
     </div>
 
-    <div class="award-share">
+    <div class="award-share" v-show="isShare" @touchstart="toggleShare">
       <div class="share-tip"></div>
     </div>
-    <div class="award-result">
+    <div class="award-result" v-show="awardResult !== -1">
       <div class="award-result-non"></div>
       <div class="award-result-win">
         <div class="input-code">abcdefg123321</div>
@@ -19,6 +19,23 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  data () {
+    return {
+      isShare: true,
+      awardTimes: 0,
+      awardResult: -1
+    }
+  },
+  methods: {
+    toggleShare () {
+      this.isShare = !this.isShare
+    }
+  }
+}
+</script>
 
 <style scoped>
 .award-title {

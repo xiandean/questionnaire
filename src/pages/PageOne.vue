@@ -1,7 +1,7 @@
 <template>
   <div class="content">
     <page-one-content></page-one-content>
-    <page-one-btns @toggleRule="toggleRule"></page-one-btns>
+    <page-one-btns @toggleRule="toggleRule" @togglePage="togglePage"></page-one-btns>
   </div>
 </template>
 <script>
@@ -11,6 +11,9 @@ export default {
   methods: {
     toggleRule () {
       this.$emit('toggleRule')
+    },
+    togglePage (i) {
+      this.$emit('togglePage', i)
     }
   },
   components: {

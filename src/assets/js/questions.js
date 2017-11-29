@@ -42,6 +42,7 @@ export default {
       answers: ["/static/img/answer_9_a.png", "/static/img/answer_9_b.png"]
     }
   ],
+  selected: [],
   results: [
     {
       id: 0,

@@ -1,8 +1,19 @@
 <template>
-  <div class="content">
+  <div class="content" @touchstart="toggleRule">
     <div class="rule-pic"></div>
   </div>
 </template>
+
+<script>
+export default {
+  methods: {
+    toggleRule () {
+      this.$emit("toggleRule")
+    }
+  }
+}  
+</script>
+
 <style scoped>
 .content {
   background-color: rgba(0, 0, 0, 0.85);
