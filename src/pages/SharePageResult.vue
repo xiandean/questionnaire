@@ -2,15 +2,15 @@
   <div class="content">
     <logo></logo>
     <div class="answer-result-list">
-      <div class="answer-result" v-for="result in results" :key="result.id">
-        <p class="result-text">你和<span>皮皮虾</span>的默契指数是</p>
+      <div class="answer-result" v-for="(result, index) in results" :key="result.id" v-show="index === metchCount">
+        <p class="result-text">你和<span>{{author.nickname}}</span>的默契指数是</p>
         <div class="result-point"><img :src="result.percent"></div>
         <div class="result-content"><img :src="result.content"></div>
       </div>
     </div>
     <div class="result-btn-box">
-      <a href="javascript:void(0);"><img src="../assets/images/create_answer_btn.png"></a>
-      <a href="javascript:void(0);"><img src="../assets/images/lottery_btn.png"></a>
+      <router-link to="/"><img src="../assets/images/create_answer_btn.png"></router-link>
+      <a href="javascript:void(0);" @touchstart="togglePage()"><img src="../assets/images/lottery_btn.png"></a>
     </div>
   </div>
 </template>
@@ -18,11 +18,18 @@
 <script>
 import Logo from '../components/PageLogo.vue'
 import questions from '../assets/js/questions'
-
+import weixin from '../assets/js/weixin'
 export default {
   data () {
     return {
+      author: weixin.author,
       results: questions.results
+    }
+  },
+  props: ['metchCount'],
+  methods: {
+    togglePage (i) {
+      this.$emit('togglePage', i)
     }
   },
   components: {

@@ -4,14 +4,22 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
+import weixin from './assets/js/weixin'
+
 import './assets/css/common.css'
 
 Vue.config.productionTip = false
 
-/* eslint-disable no-new */
-new Vue({
-  el: '#app',
-  router,
-  template: '<App/>',
-  components: { App }
+weixin.share()
+
+weixin.bind(() => {
+  
+  weixin.getWeixinInfo()
+  /* eslint-disable no-new */
+  new Vue({
+    el: '#app',
+    router,
+    template: '<App/>',
+    components: { App }
+  })
 })

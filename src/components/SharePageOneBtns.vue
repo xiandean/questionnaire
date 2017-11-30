@@ -1,7 +1,7 @@
 <template>
   <div class="btns">
     <div class="btn-test" @touchstart="togglePage()"></div>
-    <div class="btn-award" @touchstart="togglePage(3)"></div>
+    <div class="btn-award" @touchstart="togglePage(4)"></div>
   </div>
 </template>
 <script>

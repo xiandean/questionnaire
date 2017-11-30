@@ -2,7 +2,7 @@
   <div class="content">
     <logo></logo>
     <div class="answer-create-title" v-if="$route.name === 'home'"></div>
-    <answer-index v-if="$route.name === 'share'"></answer-index>
+    <answer-index v-if="$route.name === 'share'" :metchCount="metchCount" :user="user" :author="author"></answer-index>
     <answer-question-list :questions="allQuestions" :questionId="questionId" :answerIndex="answerIndex" @selectAnswer="selectAnswer" @nextQuestion="nextQuestion"></answer-question-list>
     <div class="switch-box" v-if="$route.name === 'home'">
       <a href="javascript:void(0);" class="change-btn" @touchstart="changeQuestion"><img src="../assets/images/answer_change_btn.png"></a>
@@ -17,20 +17,28 @@ import Logo from '../components/PageLogo'
 import AnswerIndex from '../components/AnswerIndex'
 import AnswerQuestionList from '../components/AnswerQuestionList'
 import questions from '../assets/js/questions'
+import weixin from '../assets/js/weixin'
 export default {
+  beforeCreate () {
+    this.questions = questions.list.concat([])
+  },
   data () {
     return {
-      questionId: questions.list[0].id,
+      user: weixin.user,
+      author: weixin.author,
+      questionId: 0,
       answerIndex: -1,
-      count: 0
+      count: 0,
+      selected: []
     }
   },
+  props: ['metchCount'],
   computed: {
     allQuestions () {
       if (this.$route.name === 'share') {
         this.updateShareQuestions()
       }
-      return questions.list.concat([])
+      return this.questions.concat([])
     }
   },
   methods: {
@@ -38,6 +46,9 @@ export default {
       if (rightAnswerIndex !== undefined) {
         if (this.answerIndex === -1) {
           this.answerIndex = rightAnswerIndex
+          if (answerIndex === this.answerIndex) {
+            this.$emit('setMetchCount', this.metchCount + 1)
+          }
           setTimeout(() => {
             this.nextQuestion()
           }, 500)
@@ -51,27 +62,27 @@ export default {
         return false
       }
 
-      questions.list.map((item, index) => {
+      this.questions.map((item, index) => {
         if (item.id === this.questionId) {
-          let question = questions.list.splice(index, 1)[0]
+          let question = this.questions.splice(index, 1)[0]
           question.answerIndex = this.answerIndex
-          questions.selected.push(question)
+          this.selected.push(question)
           this.count++
           if (this.count === 5) {
             this.$emit('togglePage')
             return false
           }
           this.answerIndex = -1
-          if (questions.list.length > 0) {
-            this.questionId = questions.list[0].id
+          if (this.questions.length > 0) {
+            this.questionId = this.questions[0].id
           }
         }
       })
     },
     changeQuestion () {
-      if (questions.list.length > 1) {
-        questions.list.push(questions.list.shift())
-        this.questionId = questions.list[0].id
+      if (this.questions.length > 1) {
+        this.questions.push(this.questions.shift())
+        this.questionId = this.questions[0].id
         this.answerIndex = -1
       }
     },
@@ -93,15 +104,15 @@ export default {
         }
       }
       let result = []
-      questions.list.map((item) => {
+      this.questions.map((item) => {
         if (ids.indexOf(item.id) !== -1) {
-          result.push(item)
+          result.push(Object.assign({}, item))
         }
       })
       result.map((item, index) => {
         item.answerIndex = indexs[index]
       })
-      questions.list = result
+      this.questions = result
       this.questionId = result[0].id
     }
   },

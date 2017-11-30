@@ -7,7 +7,7 @@
       <page-one @toggleRule="toggleRule" @togglePage="togglePage"></page-one>
     </div>
     <div class="page" v-show="currentPage === 2">
-      <page-question @togglePage="togglePage"></page-question>
+      <page-question @togglePage="togglePage" :metchCount="metchCount"></page-question>
     </div>
     <div class="page" v-show="currentPage === 3">
       <page-award></page-award>
@@ -33,12 +33,12 @@ export default {
     return {
       isGuide: false,
       isRule: false,
-      currentPage: 1
+      currentPage: 1,
+      metchCount: 0
     }
   },
   methods: {
     togglePage (i) {
-      console.log(i)
       if (i !== undefined) {
         this.currentPage = i
       } else {

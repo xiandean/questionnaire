@@ -7,13 +7,13 @@
       <share-page-one @togglePage="togglePage"></share-page-one>
     </div>
     <div class="page" v-show="currentPage === 2">
-      <page-question @togglePage="togglePage"></page-question>
+      <page-question @togglePage="togglePage" @setMetchCount="setMetchCount" :metchCount="metchCount"></page-question>
     </div>
     <div class="page" v-show="currentPage === 3">
-      <page-award></page-award>
+      <share-page-result @togglePage="togglePage" :metchCount="metchCount"></share-page-result>
     </div>
     <div class="page" v-show="currentPage === 4">
-      <share-page-result></share-page-result>
+      <page-award></page-award>
     </div>
     <div class="page" v-if="isGuide">
       <guide></guide>
@@ -38,7 +38,8 @@ export default {
     return {
       isGuide: false,
       isRule: false,
-      currentPage: 1
+      currentPage: 1,
+      metchCount: 0
     }
   },
   methods: {
@@ -48,6 +49,9 @@ export default {
       } else {
         this.currentPage++
       }
+    },
+    setMetchCount (val) {
+      this.metchCount = val
     }
   },
   components: {

@@ -3,29 +3,40 @@
     <div class="answer-index-title"></div>
 
     <div class="answer-index-progress">
-        <div class="head"><img src=""><div class="head-bg"></div></div>
+        <div class="head"><img :src="user.headimgurl"><div class="head-bg"></div></div>
         <div class="progress-box">
-            <div class="progress-num">
-                <p><b>100%</b></p>
+            <div class="progress-num" :style="{left: Math.max(-5, 20 + (metchCount - 1) * 69) + 'px'}">
+                <p><b>{{percent}}%</b></p>
                 <div class="triangle"></div>
             </div>
             <div class="progress-bar">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
+                <span v-for="i in metchCount"></span>
             </div>
         </div>
-        <div class="head"><img src=""><div class="head-bg"></div></div>
+        <div class="head"><img :src="author.headimgurl"><div class="head-bg"></div></div>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  props: ['metchCount', 'user', 'author'],
+  computed: {
+    percent () {
+      return this.metchCount * 20
+    }
+  },
+  created () {
+    console.log(this.user, this.author)
+  }
+}
+</script>
 
 <style scoped>
 .answer-index {
   width: 100%;
   margin-top: 18px;
+  margin-bottom: 18px;
   position: relative;
 }
 .answer-index-title {
