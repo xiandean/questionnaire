@@ -29,7 +29,8 @@ export default {
       isShare: true,
       awardTimes: 0,
       awardResult: -1,
-      awardCode: ''
+      awardCode: '',
+      isAwarded: false
     }
   },
   methods: {
@@ -64,10 +65,6 @@ export default {
         }]
       };
 
-      // let result = {
-      //   isAwarded: false,
-      //   award: 0
-      // }
       let num = result.award
       let data = []             
       if(num === 0) {
@@ -87,6 +84,7 @@ export default {
       this.$refs.rotate.addEventListener('webkitTransitionEnd', () => {
         setTimeout(() => {
           this.awardResult = num
+          this.isAwarded = true
         }, 1000)
       }, false)
       // $(".p3-rotate-box").css({
@@ -114,8 +112,11 @@ export default {
     },
     awardStart () {
       if (this.awardTimes <= 0) {
+        if (this.isAwarded) {
+          this.awardResult = 0
+        }
         return false
-      }
+      } 
       this.awardTimes--
       let data = {
         openid: weixin.openid , 
@@ -157,6 +158,9 @@ export default {
       console.log(res)
       if (res.status) {
         this.awardTimes = res.data
+        if (this.awardTimes <= 0) {
+          this.isAwarded = true
+        }
       } 
     }).catch((err) => {
       console.log(err)
@@ -174,10 +178,10 @@ export default {
   top: 116px;
 }
 .award-title:nth-child(1) {
-  background: url("../assets/images/award_title_01.png") no-repeat;
+  background: url("../../static/img/award_title_01.png") no-repeat;
 }
 .award-title:nth-child(2) {
-  background: url("../assets/images/award_title_00.png") no-repeat;
+  background: url("../../static/img/award_title_00.png") no-repeat;
 }
 .award-box {
   width: 626px;
@@ -186,7 +190,7 @@ export default {
   overflow: hidden;
   left: 4px;
   top: 248px;
-  background: url("../assets/images/award_bg.png") no-repeat;
+  background: url("../../static/img/award_bg.png") no-repeat;
 }
 .award-rotate {
   width: 517px;
@@ -194,7 +198,7 @@ export default {
   position: absolute;
   left: 64px;
   top: 33px;
-  background: url("../assets/images/award_rotate.png") no-repeat;
+  background: url("../../static/img/award_rotate.png") no-repeat;
 }
 .award-point {
   width: 162px;
@@ -202,7 +206,7 @@ export default {
   position: absolute;
   left: 241px;
   top: 192px;
-  background: url("../assets/images/award_point.png") no-repeat;
+  background: url("../../static/img/award_point.png") no-repeat;
 }
 
 .award-result, .award-share {
@@ -221,7 +225,7 @@ export default {
   top: 50%;
   margin-left: -270px;
   margin-top: -288px;
-  background: url("../assets/images/award_result_non.png") no-repeat;
+  background: url("../../static/img/award_result_non.png") no-repeat;
 }
 .award-result-win {
   width: 541px;
@@ -231,7 +235,7 @@ export default {
   top: 50%;
   margin-left: -270px;
   margin-top: -354px;
-  background: url("../assets/images/award_result_win.png") no-repeat;
+  background: url("../../static/img/award_result_win.png") no-repeat;
 }
 .input-code {
   width: 352px;
@@ -259,6 +263,6 @@ export default {
   position: absolute;
   right: 10px;
   top: 10px;
-  background: url("../assets/images/share_tip.png") no-repeat;
+  background: url("../../static/img/share_tip.png") no-repeat;
 }
 </style>

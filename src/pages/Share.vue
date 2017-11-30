@@ -1,7 +1,7 @@
 <template>
   <div class="share">
     <div class="page" v-show="currentPage === 0">
-      <loading></loading>
+      <loading @togglePage="togglePage"></loading>
     </div>
     <div class="page" v-show="currentPage === 1">
       <share-page-one @togglePage="togglePage"></share-page-one>
@@ -38,7 +38,7 @@ export default {
     return {
       isGuide: false,
       isRule: false,
-      currentPage: 1,
+      currentPage: 0,
       metchCount: 0
     }
   },

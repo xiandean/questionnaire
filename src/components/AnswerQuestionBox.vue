@@ -20,7 +20,7 @@ export default {
 
 <style scoped>
 .answer-question-box {
-  background: url("../assets/images/answer_box_bg.png") 0 0 no-repeat;
+  background: url("../../static/img/answer_box_bg.png") 0 0 no-repeat;
   width: 541px;
   height: 634px;
   position: absolute;
@@ -40,19 +40,19 @@ export default {
 }
 
 .answer-question-box .answer-question-btn-box > a:first-child {
-  background: url("../assets/images/a_btn_before_bg.png") 0 0 no-repeat;
+  background: url("../../static/img/a_btn_before_bg.png") 0 0 no-repeat;
   margin-bottom: 10px;
 }
 
 .answer-question-box .answer-question-btn-box > a:first-child.active {
-  background-image: url("../assets/images/a_btn_after_bg.png");
+  background-image: url("../../static/img/a_btn_after_bg.png");
 }
 
 .answer-question-box .answer-question-btn-box > a:last-child {
-  background: url("../assets/images/b_btn_before_bg.png") 0 0 no-repeat;
+  background: url("../../static/img/b_btn_before_bg.png") 0 0 no-repeat;
 }
 
 .answer-question-box .answer-question-btn-box > a:last-child.active {
-  background-image: url("../assets/images/b_btn_after_bg.png");
+  background-image: url("../../static/img/b_btn_after_bg.png");
 }
 </style>

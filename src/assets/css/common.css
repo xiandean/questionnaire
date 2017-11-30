@@ -34,3 +34,14 @@ html, body, #app {
     left: 0;
     top: 0;
 }
+
+@keyframes girlStand {
+    0% {
+        transform: rotate(0deg);
+        transform-origin: 50px bottom
+    }
+    100% {
+        transform: rotate(2deg);
+        transform-origin: 50px bottom
+    }
+}

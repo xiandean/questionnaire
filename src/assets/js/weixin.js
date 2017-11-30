@@ -7,10 +7,11 @@ const wx = global.wx || {}
 
 export default {
   openid: '',
+  oid: '',
   user: {nickname: "", headimgurl: ""},
   author: {nickname: "", headimgurl: ""},
   options: {
-    // link: '', // 分享链接
+    link: '', // 分享链接
     title: '海浪工作室', // 分享标题
     desc: '海浪工作室', // 分享描述
     imgUrl: 'http://news.gd.sina.com.cn/staff/xdgdsina/hina/assets/images/b_logo.png' // 分享图标
@@ -97,14 +98,14 @@ export default {
     return null
   },
   bind (callback) {
-    if (this.getQueryString("openid")) {
-      this.openid = this.getQueryString("openid")
-      window.localStorage.setItem("wx_openid", this.openid)
+    if (window.localStorage.getItem("wx_openid") !== null) {
+      this.openid = window.localStorage.getItem("wx_openid")
       if (callback) {
         callback()
       }
-    } else if (window.localStorage.getItem("wx_openid") !== null) {
-      this.openid = window.localStorage.getItem("wx_openid")
+    } else if (this.getQueryString("openid")) {
+      this.openid = this.getQueryString("openid")
+      window.localStorage.setItem("wx_openid", this.openid)
       if (callback) {
         callback()
       }
@@ -125,8 +126,13 @@ export default {
         this.user.nickname = res.data.nickname
         this.user.headimgurl = res.data.headimgurl
         if (this.getQueryString("oid")) {
+          let params = this.getQueryString("oid").split(';')
+          if (params.length < 4) {
+            return false
+          }
+          this.oid = params[3]
           Vue.jsonp('http://interface.gd.sina.com.cn/gdif/gdwx/c_member/', {
-            openid : this.getQueryString("oid")
+            openid : this.oid
           }).then((res) => {
             console.log(res)
             if(!res.error) {

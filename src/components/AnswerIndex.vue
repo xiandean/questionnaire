@@ -40,7 +40,7 @@ export default {
   position: relative;
 }
 .answer-index-title {
-  background: url("../assets/images/answer_index_title.png") 0 0 no-repeat;
+  background: url("../../static/img/answer_index_title.png") 0 0 no-repeat;
   width: 640px;
   height: 62px;
 }

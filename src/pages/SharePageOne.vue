@@ -19,3 +19,11 @@ export default {
   }
 }
 </script>
+<style scoped>
+@media only screen and (min-aspect-ratio: 320/480) {
+  .content {
+    transform: scale(0.95);
+    transform-origin: center top;
+  }
+}
+</style>

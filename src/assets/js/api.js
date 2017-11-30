@@ -26,6 +26,7 @@ export const getNum = (data) => {
 }
 
 export const getPrize = (data) => {
+  console.log(data)
   return fetch({
     url: '/answer/get_prize',
     params: data

@@ -1,13 +1,13 @@
 <template>
-  <div class="content">
+  <div class="content" :class="{small: $root.route.name==='home'}">
     <logo></logo>
-    <div class="answer-create-title" v-if="$route.name === 'home'"></div>
-    <answer-index v-if="$route.name === 'share'" :metchCount="metchCount" :user="user" :author="author"></answer-index>
+    <div class="answer-create-title" v-if="$root.route.name === 'home'"></div>
+    <answer-index v-if="$root.route.name === 'share'" :metchCount="metchCount" :user="user" :author="author"></answer-index>
     <answer-question-list :questions="allQuestions" :questionId="questionId" :answerIndex="answerIndex" @selectAnswer="selectAnswer" @nextQuestion="nextQuestion"></answer-question-list>
-    <div class="switch-box" v-if="$route.name === 'home'">
-      <a href="javascript:void(0);" class="change-btn" @touchstart="changeQuestion"><img src="../assets/images/answer_change_btn.png"></a>
-      <a href="javascript:void(0);" class="next-btn" @touchstart="nextQuestion" v-show="count < 4"><img src="../assets/images/answer_next_btn.png"></a>
-      <a href="javascript:void(0);" class="created-btn" @touchstart="nextQuestion" v-show="count >= 4"><img src="../assets/images/answer_created_btn.png"></a>
+    <div class="switch-box" v-if="$root.route.name === 'home'">
+      <a href="javascript:void(0);" class="change-btn" @touchstart="changeQuestion"><img src="../../static/img/answer_change_btn.png"></a>
+      <a href="javascript:void(0);" class="next-btn" @touchstart="nextQuestion" v-show="count < 4"><img src="../../static/img/answer_next_btn.png"></a>
+      <a href="javascript:void(0);" class="created-btn" @touchstart="nextQuestion" v-show="count >= 4"><img src="../../static/img/answer_created_btn.png"></a>
     </div>
   </div>
 </template>
@@ -35,7 +35,7 @@ export default {
   props: ['metchCount'],
   computed: {
     allQuestions () {
-      if (this.$route.name === 'share') {
+      if (this.$root.route.name === 'share') {
         this.updateShareQuestions()
       }
       return this.questions.concat([])
@@ -69,6 +69,17 @@ export default {
           this.selected.push(question)
           this.count++
           if (this.count === 5) {
+            let oid = weixin.oid || weixin.openid
+            let qs = ''
+            let as = ''
+            this.selected.map((s) => {
+              qs += s.id
+              as += s.answerIndex
+            })
+            let oids = 'official' + ';' + qs + ';' + as + ';' + oid;
+            console.log(oids)
+            weixin.options.url = '/' + oid
+            weixin.updateShare()
             this.$emit('togglePage')
             return false
           }
@@ -87,8 +98,8 @@ export default {
       }
     },
     updateShareQuestions () {
-      let questionIds = this.$route.params.questions
-      let answerIndexs = this.$route.params.answers
+      let questionIds = this.$root.route.params.questions
+      let answerIndexs = this.$root.route.params.answers
       let ids = []
       let indexs = []
       for (let i = 0; i < questionIds.length; i++) {
@@ -104,14 +115,18 @@ export default {
         }
       }
       let result = []
-      this.questions.map((item) => {
-        if (ids.indexOf(item.id) !== -1) {
-          result.push(Object.assign({}, item))
-        }
+
+      ids.map((id, index) => {
+        this.questions.map((item) => {
+          if (id === item.id) {
+            let newItem = Object.assign({}, item)
+            newItem.answerIndex = indexs[index]
+            result.push(newItem)
+            return true
+          }
+        })
       })
-      result.map((item, index) => {
-        item.answerIndex = indexs[index]
-      })
+
       this.questions = result
       this.questionId = result[0].id
     }
@@ -126,7 +141,7 @@ export default {
 
 <style scoped>
 .answer-create-title {
-  background: url("../assets/images/answer_create_title.png") 0 0 no-repeat;
+  background: url("../../static/img/answer_create_title.png") 0 0 no-repeat;
   width: 394px;
   height: 110px;
   margin: 20px auto 0;
@@ -140,5 +155,12 @@ export default {
 
 .switch-box > a {
   display: block;
+}
+
+@media only screen and (min-aspect-ratio: 320/480) {
+  .small {
+    transform: scale(0.95);
+    transform-origin: center top;
+  }
 }
 </style>

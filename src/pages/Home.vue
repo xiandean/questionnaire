@@ -1,7 +1,7 @@
 <template>
   <div class="home">
-    <div class="page" v-show="currentPage === 0">
-      <loading></loading>
+    <div class="page " v-show="currentPage === 0">
+      <loading @togglePage="togglePage"></loading>
     </div>
     <div class="page" v-show="currentPage === 1">
       <page-one @toggleRule="toggleRule" @togglePage="togglePage"></page-one>
@@ -12,9 +12,6 @@
     <div class="page" v-show="currentPage === 3">
       <page-award></page-award>
     </div>
-    <div class="page" v-if="isGuide">
-      <guide></guide>
-    </div>
     <div class="page" v-show="isRule">
       <rule @toggleRule="toggleRule"></rule>
     </div>
@@ -22,7 +19,6 @@
 </template>
 <script>
 import Loading from './Loading'
-import Guide from './Guide'
 import PageOne from './PageOne'
 import Rule from './Rule'
 import PageAward from './PageAward'
@@ -31,9 +27,8 @@ export default {
   name: 'home',
   data () {
     return {
-      isGuide: false,
       isRule: false,
-      currentPage: 1,
+      currentPage: 0,
       metchCount: 0
     }
   },
@@ -51,7 +46,6 @@ export default {
   },
   components: {
     Loading,
-    Guide,
     PageOne,
     Rule,
     PageAward,

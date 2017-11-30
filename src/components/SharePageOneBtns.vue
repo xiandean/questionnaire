@@ -26,7 +26,7 @@ export default {
   position: absolute;
   left: 73px;
   top: 0;
-  background: url("../assets/images/p1_btn_test.png") no-repeat;
+  background: url("../../static/img/p1_btn_test.png") no-repeat;
 }
 .btn-award {
   width: 225px;
@@ -34,6 +34,6 @@ export default {
   position: absolute;
   left: 347px;
   top: 0;
-  background: url("../assets/images/p1_btn_award.png") no-repeat;
+  background: url("../../static/img/p1_btn_award.png") no-repeat;
 }
 </style>

@@ -9,8 +9,8 @@
       </div>
     </div>
     <div class="result-btn-box">
-      <router-link to="/"><img src="../assets/images/create_answer_btn.png"></router-link>
-      <a href="javascript:void(0);" @touchstart="togglePage()"><img src="../assets/images/lottery_btn.png"></a>
+      <a href="/"><img src="../../static/img/create_answer_btn.png"></a>
+      <a href="javascript:void(0);" @touchstart="togglePage()"><img src="../../static/img/lottery_btn.png"></a>
     </div>
   </div>
 </template>
@@ -61,13 +61,13 @@ export default {
 
 .answer-result .result-point {
   text-align: center;
-  background: url("../assets/images/result_point_bg.png") center no-repeat;
+  background: url("../../static/img/result_point_bg.png") center no-repeat;
   width: 280px;
   margin: 0 auto 25px;
 }
 
 .answer-result .result-content {
-  background: url("../assets/images/result_content_bg.png") 0 0 no-repeat;
+  background: url("../../static/img/result_content_bg.png") 0 0 no-repeat;
   width: 541px;
   height: 557px;
   margin: 0 auto 45px;

@@ -2,10 +2,46 @@
   <div class="content">
     <div class="loading-box">
       <div class="loading-icon"></div>
-      <div class="loading-text">loading...</div>
+      <div class="loading-text">{{loadingText}}</div>
     </div>
   </div>
 </template>
+
+<script>
+import loadingImages from '../assets/js/loading'
+export default {
+  data () {
+    return {
+      count: 0,
+      total: 0,
+      loadingText: 'loading...'
+    }
+  },
+  methods: {
+    onProgress () {
+      this.loadingText = Math.floor(this.count / this.total * 100) + '%';
+      console.log(this.loadingText)
+    },
+    onComplete () {
+      this.$emit('togglePage')
+    }
+  },
+  created () {
+    this.total = loadingImages.home.length
+    loadingImages.home.map((src) => {
+      let img = new Image()
+      img.src = src
+      img.onload = () => {
+        this.count++
+        this.onProgress()
+        if (this.count === this.total) {
+          this.onComplete()
+        }
+      }
+    })
+  }
+}
+</script>
 
 <style scoped>
 .loading-box {
@@ -20,7 +56,7 @@
 .loading-icon {
   width: 100%;
   height: 82px;
-  background: url("../assets/images/loading_icon.png") no-repeat;
+  background: url("../../static/img/loading_icon.png") no-repeat;
 }
 .loading-text {
   width: 100%;
