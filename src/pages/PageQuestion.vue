@@ -78,7 +78,7 @@ export default {
             })
             let oids = 'official' + ';' + qs + ';' + as + ';' + oid;
             weixin.options.link = 'http://news.gd.sina.com.cn/staff/whrgdsina/interface/2017/xiao_pi_qi/answer/home?oid=' + oids
-            weixin.options.desc = '默契考验分享页'
+            // weixin.options.desc = '默契考验分享页'
             weixin.updateShare()
             this.$emit('togglePage')
             return false

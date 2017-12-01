@@ -2,6 +2,7 @@ export default {
 	home: [
 		'http://n.sinaimg.cn/gd/xiaopiqi/answer/a_btn_after_bg.png',
 		'http://n.sinaimg.cn/gd/xiaopiqi/answer/a_btn_before_bg.png',
+		'http://n.sinaimg.cn/gd/xiaopiqi/answer/a_btn_error_bg.png',
 		'http://n.sinaimg.cn/gd/xiaopiqi/answer/answer_0.png',
 		'http://n.sinaimg.cn/gd/xiaopiqi/answer/answer_1.png',
 		'http://n.sinaimg.cn/gd/xiaopiqi/answer/answer_2.png',
@@ -47,6 +48,7 @@ export default {
 		'http://n.sinaimg.cn/gd/xiaopiqi/answer/award_title_01.png',
 		'http://n.sinaimg.cn/gd/xiaopiqi/answer/b_btn_after_bg.png',
 		'http://n.sinaimg.cn/gd/xiaopiqi/answer/b_btn_before_bg.png',
+		'http://n.sinaimg.cn/gd/xiaopiqi/answer/a_btn_error_bg.png',
 		'http://n.sinaimg.cn/gd/xiaopiqi/answer/create_answer_btn.png',
 		'http://n.sinaimg.cn/gd/xiaopiqi/answer/logo.png',
 		'http://n.sinaimg.cn/gd/xiaopiqi/answer/p1_girl_sit.png',

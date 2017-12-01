@@ -51,7 +51,7 @@ function musicHandler () {
 
 weixin.bind(() => {
   if (route.name === 'share') {
-    weixin.options.desc = '默契考验分享页'
+    // weixin.options.desc = '默契考验分享页'
     weixin.options.link = 'http://news.gd.sina.com.cn/staff/whrgdsina/interface/2017/xiao_pi_qi/answer/home?oid=' + weixin.getQueryString('oid')
   }
 

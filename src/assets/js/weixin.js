@@ -12,9 +12,9 @@ export default {
   author: {nickname: "", headimgurl: ""},
   options: {
     link: 'http://news.gd.sina.com.cn/staff/whrgdsina/interface/2017/xiao_pi_qi/answer/home', // 分享链接
-    title: '默契考验', // 分享标题
-    desc: '默契考验主页', // 分享描述
-    imgUrl: 'http://news.gd.sina.com.cn/staff/xdgdsina/hina/assets/images/b_logo.png' // 分享图标
+    title: '默契大考验', // 分享标题
+    desc: '也许我们间只有塑料花情谊起码还有百元红包来打call', // 分享描述
+    imgUrl: 'http://n.sinaimg.cn/gd/xiaopiqi/answer/weixin_share.jpg' // 分享图标
     // callback: '', //分享成功回调
   },
   share (bgMusicId) {
