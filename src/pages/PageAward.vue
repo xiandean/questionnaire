@@ -87,28 +87,6 @@ export default {
           this.isAwarded = true
         }, 1000)
       }, false)
-      // $(".p3-rotate-box").css({
-      //   "-webkit-transform": "rotate("+rotate+"deg)",
-      //   "-webkit-transition": "-webkit-transform "+duration+"s  cubic-bezier(0.25,0.1,0.25,1) 0s"
-      // });
-      // $(".p3-rotate-box").on("webkitTransitionEnd",function() {
-      //   setTimeout(function() {
-      //     if (num == 0) {
-      //       $('.pop-fail').addClass("active");
-      //       // zhuanging = false;
-      //     } else {
-
-      //       $(".pop-win-awarded").removeClass("active");
-      //       $(".pop-win-first").addClass("active");
-      //       $('.pop-win').addClass("active");
-      //       // app.api.submitInfo(function() {
-      //       // $(".p3-win").removeClass("active");
-      //       // $(".p3-share").addClass("active");
-      //       // zhuanging = false;
-      //       // });
-      //     }
-      //   }, 1000)
-      // });
     },
     awardStart () {
       if (this.awardTimes <= 0) {
@@ -120,7 +98,7 @@ export default {
       this.awardTimes--
       let data = {
         openid: weixin.openid , 
-        token: '', 
+        token: window.token || '', 
         nickname: weixin.user.nickname, 
         headimgurl: weixin.user.headimgurl
       }

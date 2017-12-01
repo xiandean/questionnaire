@@ -12,8 +12,8 @@ export default {
   author: {nickname: "", headimgurl: ""},
   options: {
     link: '', // 分享链接
-    title: '海浪工作室', // 分享标题
-    desc: '海浪工作室', // 分享描述
+    title: '默契考验', // 分享标题
+    desc: '默契考验主页', // 分享描述
     imgUrl: 'http://news.gd.sina.com.cn/staff/xdgdsina/hina/assets/images/b_logo.png' // 分享图标
     // callback: '', //分享成功回调
   },

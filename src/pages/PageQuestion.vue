@@ -78,7 +78,7 @@ export default {
             })
             let oids = 'official' + ';' + qs + ';' + as + ';' + oid;
             console.log(oids)
-            weixin.options.url = '/' + oid
+            weixin.options.link = '/' + oid
             weixin.updateShare()
             this.$emit('togglePage')
             return false

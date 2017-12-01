@@ -31,10 +31,12 @@ if (!oid) {
 	}
 }
 
-weixin.share()
-
 weixin.bind(() => {
-  
+  if (route.name === 'share') {
+    weixin.options.link = '/' + weixin.getQueryString('oid')
+  }
+  weixin.share()
+
   weixin.getWeixinInfo()
   /* eslint-disable no-new */
   new Vue({
