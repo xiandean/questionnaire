@@ -52,16 +52,17 @@ export default {
           min: 305,
           max: 355
         }],
-        first:  [{
+        first: [{
+          min: 125,
+          max: 175
+        }],
+        second:  [{
           min: 245,
           max: 295
         }],
-        second: [{
+        third: [{
           min: 5,
           max: 55
-        },{
-          min: 125,
-          max: 175
         }]
       };
 

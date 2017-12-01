@@ -12,12 +12,9 @@
     <div class="page" v-show="currentPage === 3">
       <share-page-result @togglePage="togglePage" :metchCount="metchCount"></share-page-result>
     </div>
-    <div class="page" v-show="currentPage === 4">
+    <!-- <div class="page" v-show="currentPage === 4">
       <page-award></page-award>
-    </div>
-    <div class="page" v-if="isGuide">
-      <guide></guide>
-    </div>
+    </div> -->
     <div class="page" v-show="isRule">
       <rule></rule>
     </div>
@@ -26,17 +23,15 @@
 
 <script>
 import Loading from './Loading'
-import Guide from './Guide'
 import SharePageOne from './SharePageOne'
 import Rule from './Rule'
-import PageAward from './PageAward'
+// import PageAward from './PageAward'
 import PageQuestion from './PageQuestion'
 import SharePageResult from './SharePageResult'
 export default {
   name: 'share',
   data () {
     return {
-      isGuide: false,
       isRule: false,
       currentPage: 0,
       metchCount: 0
@@ -56,10 +51,9 @@ export default {
   },
   components: {
     Loading,
-    Guide,
     SharePageOne,
     Rule,
-    PageAward,
+    // PageAward,
     PageQuestion,
     SharePageResult
   }

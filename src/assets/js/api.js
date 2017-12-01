@@ -19,10 +19,17 @@ export const fetch = (options) => {
 }
 
 export const getNum = (data) => {
-  return fetch({
-    url: '/answer/get_num',
-    params: data
+  console.log(data)
+  return axios.post('/answer/get_num', {openid: data.openid}).then((response) => {
+    console.log(response)
   })
+  .catch((error) => {
+    console.log(error)
+  })
+  // return fetch({
+  //   url: '/answer/get_num',
+  //   params: data
+  // })
 }
 
 export const getPrize = (data) => {

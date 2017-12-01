@@ -9,7 +9,7 @@
       </div>
     </div>
     <div class="result-btn-box">
-      <a href="/"><img src="http://n.sinaimg.cn/gd/xiaopiqi/answer/create_answer_btn.png"></a>
+      <a href="javascript:void(0);" @touchstart="togglePage()"><img src="http://n.sinaimg.cn/gd/xiaopiqi/answer/create_answer_btn.png"></a>
       <a href="javascript:void(0);" @touchstart="togglePage()"><img src="http://n.sinaimg.cn/gd/xiaopiqi/answer/lottery_btn.png"></a>
     </div>
   </div>
@@ -28,8 +28,8 @@ export default {
   },
   props: ['metchCount'],
   methods: {
-    togglePage (i) {
-      this.$emit('togglePage', i)
+    togglePage () {
+      window.location.href = '/'
     }
   },
   components: {

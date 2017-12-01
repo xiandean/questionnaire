@@ -1,7 +1,7 @@
 <template>
   <div class="btns">
     <div class="btn-test" @touchstart="togglePage()"></div>
-    <div class="btn-award" @touchstart="togglePage(4)"></div>
+    <!-- <div class="btn-award" @touchstart="togglePage(4)"></div> -->
   </div>
 </template>
 <script>
@@ -21,10 +21,11 @@ export default {
   position: relative;
 }
 .btn-test {
-  width: 225px;
-  height: 113px;
+  width: 499px;
+  height: 73px;
   position: absolute;
-  left: 73px;
+  left: 50%;
+  margin-left: -250px;
   top: 0;
   background: url("http://n.sinaimg.cn/gd/xiaopiqi/answer/p1_btn_test.png") no-repeat;
 }
