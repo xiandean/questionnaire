@@ -75,6 +75,7 @@ export default {
 
 .result-btn-box {
   display: flex;
+  display:-webkit-flex;
   justify-content: space-around;
 }
 </style>

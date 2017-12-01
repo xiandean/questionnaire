@@ -151,6 +151,7 @@ export default {
   width: 100%;
   margin-top: 35px;
   display: flex;
+  display:-webkit-flex;
   justify-content: space-around;
 }
 

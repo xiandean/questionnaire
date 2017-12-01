@@ -49,6 +49,7 @@ export default {
   width: 530px;
   height: 76px;
   display: flex;
+  display:-webkit-flex;
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
@@ -110,6 +111,7 @@ export default {
   background-color: #fff;
   padding: 4px;
   display: flex;
+  display:-webkit-flex;
   justify-content: flex-start;
 }
 
