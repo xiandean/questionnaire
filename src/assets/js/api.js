@@ -29,7 +29,7 @@ export const fetch = (options) => {
 export const getNum = (data) => {
   return fetch({
     method: 'post',
-    url: '/answer/get_num',
+    url: 'http://news.gd.sina.com.cn/staff/whrgdsina/interface/2017/xiao_pi_qi/answer/get_num',
     data: data
   })
 }
@@ -37,7 +37,7 @@ export const getNum = (data) => {
 export const getPrize = (data) => {
   return fetch({
     method: 'post',
-    url: '/answer/get_prize',
+    url: 'http://news.gd.sina.com.cn/staff/whrgdsina/interface/2017/xiao_pi_qi/answer/get_prize',
     data: data
   })
 }

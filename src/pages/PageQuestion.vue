@@ -77,8 +77,7 @@ export default {
               as += s.answerIndex
             })
             let oids = 'official' + ';' + qs + ';' + as + ';' + oid;
-            console.log(oids)
-            weixin.options.link = '/' + oid
+            weixin.options.link = 'http://news.gd.sina.com.cn/staff/whrgdsina/interface/2017/xiao_pi_qi/answer/home?oid=' + oids
             weixin.updateShare()
             this.$emit('togglePage')
             return false

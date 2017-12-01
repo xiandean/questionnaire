@@ -29,7 +29,7 @@ export default {
   props: ['metchCount'],
   methods: {
     togglePage () {
-      window.location.href = '/'
+      window.location.href = 'http://news.gd.sina.com.cn/staff/whrgdsina/interface/2017/xiao_pi_qi/answer/home'
     }
   },
   components: {

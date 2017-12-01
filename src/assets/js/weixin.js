@@ -11,7 +11,7 @@ export default {
   user: {nickname: "", headimgurl: ""},
   author: {nickname: "", headimgurl: ""},
   options: {
-    link: '', // 分享链接
+    link: 'http://news.gd.sina.com.cn/staff/whrgdsina/interface/2017/xiao_pi_qi/answer/home', // 分享链接
     title: '默契考验', // 分享标题
     desc: '默契考验主页', // 分享描述
     imgUrl: 'http://news.gd.sina.com.cn/staff/xdgdsina/hina/assets/images/b_logo.png' // 分享图标
