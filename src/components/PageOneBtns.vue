@@ -1,5 +1,5 @@
 <template>
-  <div class="btns">
+  <div class="btns components-PageOneBtns">
     <div class="btn-create" @touchstart="togglePage()"></div>
     <div class="btn-rule" @touchstart="toggleRule"></div>
   </div>

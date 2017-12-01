@@ -17,7 +17,7 @@ export default {
     imgUrl: 'http://news.gd.sina.com.cn/staff/xdgdsina/hina/assets/images/b_logo.png' // 分享图标
     // callback: '', //分享成功回调
   },
-  share () {
+  share (bgMusicId) {
     Vue.jsonp('http://news.gd.sina.com.cn/market/c/gd/wxjsapi/index.php', {
       url: window.location.href.split('#')[0]
     }).then((res) => {
@@ -33,7 +33,9 @@ export default {
         ]
       })
       wx.ready(() => {
-        document.getElementById('bgMusic').play()
+        if (bgMusicId) {
+          document.getElementById(bgMusicId).play()
+        }
         this.updateShare()
       })
     }).catch((err) => {

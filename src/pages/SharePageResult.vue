@@ -1,5 +1,5 @@
 <template>
-  <div class="content">
+  <div class="content pages-SharePageResult">
     <logo></logo>
     <div class="answer-result-list">
       <div class="answer-result" v-for="(result, index) in results" :key="result.id" v-show="index === metchCount">

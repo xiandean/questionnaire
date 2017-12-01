@@ -1,5 +1,5 @@
 <template>
-  <div class="sub-content">
+  <div class="sub-content components-PageOneContent">
     <logo></logo>
     <div class="title">
       <div class="girl-sit"></div>
@@ -29,6 +29,7 @@ export default {
   height: 614px;
   position: relative;
   background: url("http://n.sinaimg.cn/gd/xiaopiqi/answer/p1_title_bg.png") no-repeat;
+  animation: bounceInDown 1s 0s;
 }
 .girl-sit {
   width: 98px;
@@ -54,6 +55,7 @@ export default {
   left: 403px;
   top: 501px;
   background: url("http://n.sinaimg.cn/gd/xiaopiqi/answer/p1_title_words.png") no-repeat;
+  animation: bounce 2s 0s infinite;
 }
 .title-icon-01 {
   width: 62px;
@@ -76,5 +78,6 @@ export default {
   height: 142px;
   margin: 12px auto 0;
   background: url("http://n.sinaimg.cn/gd/xiaopiqi/answer/p1_text.png") no-repeat;
+  animation: float 1s ease-in-out 0s infinite alternate;
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="answer-index">
+  <div class="answer-index components-AnswerIndex">
     <div class="answer-index-title"></div>
 
     <div class="answer-index-progress">

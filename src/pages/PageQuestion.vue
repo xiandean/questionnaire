@@ -1,5 +1,5 @@
 <template>
-  <div class="content" :class="{small: $root.route.name==='home'}">
+  <div class="content pages-PageQuestion" :class="{small: $root.route.name==='home'}">
     <logo></logo>
     <div class="answer-create-title" v-if="$root.route.name === 'home'"></div>
     <answer-index v-if="$root.route.name === 'share'" :metchCount="metchCount" :user="user" :author="author"></answer-index>
@@ -78,6 +78,7 @@ export default {
             })
             let oids = 'official' + ';' + qs + ';' + as + ';' + oid;
             weixin.options.link = 'http://news.gd.sina.com.cn/staff/whrgdsina/interface/2017/xiao_pi_qi/answer/home?oid=' + oids
+            weixin.options.desc = '默契考验分享页'
             weixin.updateShare()
             this.$emit('togglePage')
             return false
@@ -144,6 +145,7 @@ export default {
   width: 394px;
   height: 110px;
   margin: 20px auto 0;
+  animation: float 1s ease-in-out 0s infinite alternate;
 }
 .switch-box {  
   width: 100%;

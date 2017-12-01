@@ -1,5 +1,5 @@
 <template>
-  <div class="content">
+  <div class="content pages-PageAward">
     <div class="award-title" v-show="awardTimes === 1"></div>
     <div class="award-title" v-show="awardTimes === 0"></div>
     <div class="award-box">

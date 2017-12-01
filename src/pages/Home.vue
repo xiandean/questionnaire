@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="home pages-Home">
     <div class="page " v-show="currentPage === 0">
       <loading @togglePage="togglePage"></loading>
     </div>

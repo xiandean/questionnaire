@@ -1,5 +1,5 @@
 <template>
-  <div class="content">
+  <div class="content pages-Loading">
     <div class="loading-box">
       <div class="loading-icon"></div>
       <div class="loading-text">{{loadingText}}</div>

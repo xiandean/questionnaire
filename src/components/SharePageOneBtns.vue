@@ -1,5 +1,5 @@
 <template>
-  <div class="btns">
+  <div class="btns components-SharePageOneBtns">
     <div class="btn-test" @touchstart="togglePage()"></div>
     <!-- <div class="btn-award" @touchstart="togglePage(4)"></div> -->
   </div>

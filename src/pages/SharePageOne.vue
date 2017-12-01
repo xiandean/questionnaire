@@ -1,5 +1,5 @@
 <template>
-  <div class="content">
+  <div class="content pages-SharePageOne">
     <page-one-content></page-one-content>
     <share-page-one-btns @togglePage="togglePage"></share-page-one-btns>
   </div>

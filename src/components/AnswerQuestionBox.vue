@@ -1,5 +1,5 @@
 <template>
-  <div class="answer-question-box">
+  <div class="answer-question-box components-AnswerQuestionBox">
     <div class="answer-question-title"><img :src="question.question"></div>
       <div class="answer-question-btn-box">
         <a href="javascript:void(0);" v-for="(answer, index) in question.answers" @touchstart="selectAnswer(index, question.answerIndex)" :class="{active: answerIndex === index}"><img :src="answer"></a>
@@ -42,6 +42,7 @@ export default {
 .answer-question-box .answer-question-btn-box > a:first-child {
   background: url("http://n.sinaimg.cn/gd/xiaopiqi/answer/a_btn_before_bg.png") 0 0 no-repeat;
   margin-bottom: 10px;
+  animation: wave 3s 1s infinite;
 }
 
 .answer-question-box .answer-question-btn-box > a:first-child.active {
@@ -50,6 +51,7 @@ export default {
 
 .answer-question-box .answer-question-btn-box > a:last-child {
   background: url("http://n.sinaimg.cn/gd/xiaopiqi/answer/b_btn_before_bg.png") 0 0 no-repeat;
+  animation: wave 3s 2s infinite;
 }
 
 .answer-question-box .answer-question-btn-box > a:last-child.active {

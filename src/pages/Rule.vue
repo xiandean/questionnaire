@@ -1,5 +1,5 @@
 <template>
-  <div class="content" @touchstart="toggleRule">
+  <div class="content pages-Rule" @touchstart="toggleRule">
     <div class="rule-pic"></div>
   </div>
 </template>

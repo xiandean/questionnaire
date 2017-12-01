@@ -1,5 +1,5 @@
 <template>
-  <div class="content">
+  <div class="content pages-Guide">
     <div class="guide-pic"><img src="http://n.sinaimg.cn/gd/xiaopiqi/answer/guide.png" alt=""></div>
   </div>
 </template>

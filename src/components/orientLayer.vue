@@ -1,5 +1,5 @@
 <template>
-  <div class="mod-orient-layer">
+  <div class="mod-orient-layer components-orientLayer">
       <div class="mod-orient-layer__content">
           <i class="icon mod-orient-layer__icon-orient"></i>
           <div class="mod-orient-layer__desc">{{msg}}</div>

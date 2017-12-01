@@ -66,3 +66,21 @@ html, body, #app {
         transform-origin: 50px bottom
     }
 }
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(5px);
+    }
+}
+
+@keyframes wave {
+    0%, 33%, 100% {
+        transform: scale(1);
+    }
+    16% {
+        transform: scale(1.05);
+    }
+}

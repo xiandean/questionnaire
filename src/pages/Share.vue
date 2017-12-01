@@ -1,5 +1,5 @@
 <template>
-  <div class="share">
+  <div class="share pages-Share">
     <div class="page" v-show="currentPage === 0">
       <loading @togglePage="togglePage"></loading>
     </div>

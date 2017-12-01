@@ -1,5 +1,5 @@
 <template>
-  <div class="content">
+  <div class="content pages-PageOne">
     <page-one-content></page-one-content>
     <page-one-btns @toggleRule="toggleRule" @togglePage="togglePage"></page-one-btns>
   </div>
