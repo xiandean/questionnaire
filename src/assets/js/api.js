@@ -1,41 +1,43 @@
 import axios from 'axios'
+import qs from 'qs'
 
 export const fetch = (options) => {
-  const {method = 'get', data, params, url} = options
+  const {method = 'get', data, url} = options
   return new Promise((resolve, reject) => {
-    axios({
-      method: method,
-      url: url,
-      data: data,
-      params: params
-    })
-    .then((response) => {
-      resolve(response.data)
-    })
-    .catch((error) => {
-      reject(error)
-    })
+    if (method === 'get') {
+      axios.get(url, {
+        params: data
+      })
+      .then((response) => {
+        resolve(response.data)
+      })
+      .catch((error) => {
+        reject(error)
+      })
+    } else if (method === 'post') {
+      axios.post(url, qs.stringify(data))
+      .then((response) => {
+        resolve(response.data)
+      })
+      .catch((error) => {
+        reject(error)
+      })
+    }
   })
 }
 
 export const getNum = (data) => {
-  console.log(data)
-  return axios.post('/answer/get_num', {openid: data.openid}).then((response) => {
-    console.log(response)
+  return fetch({
+    method: 'post',
+    url: '/answer/get_num',
+    data: data
   })
-  .catch((error) => {
-    console.log(error)
-  })
-  // return fetch({
-  //   url: '/answer/get_num',
-  //   params: data
-  // })
 }
 
 export const getPrize = (data) => {
-  console.log(data)
   return fetch({
+    method: 'post',
     url: '/answer/get_prize',
-    params: data
+    data: data
   })
 }
