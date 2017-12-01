@@ -13,7 +13,7 @@ export default {
   options: {
     link: 'http://news.gd.sina.com.cn/staff/whrgdsina/interface/2017/xiao_pi_qi/answer/home', // 分享链接
     title: '默契大考验', // 分享标题
-    desc: '也许我们间只有塑料花情谊起码还有百元红包来打call', // 分享描述
+    desc: '给你一个红包帮你测出谁是塑料花之交', // 分享描述
     imgUrl: 'http://n.sinaimg.cn/gd/xiaopiqi/answer/weixin_share.jpg' // 分享图标
     // callback: '', //分享成功回调
   },
