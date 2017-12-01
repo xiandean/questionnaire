@@ -9,6 +9,10 @@
     "start": "npm run dev",
     "build": "node build/build.js"
   },
+  "browserslist": [
+    "iOS >= 8",
+    "Android > 4"
+  ],
   "dependencies": {
     "axios": "^0.17.1",
     "jsonp": "^0.2.1",
