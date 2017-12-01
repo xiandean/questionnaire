@@ -236,8 +236,8 @@ export default {
 }
 
 .share-tip {
-  width: 292px;
-  height: 236px;
+  width: 475px;
+  height: 346px;
   position: absolute;
   right: 10px;
   top: 10px;
