@@ -77,11 +77,15 @@ export default {
       }else if(num === 3) {
         data = AwardData.third
       }
+
       let area = data[this.getRandom(0, data.length)]
       let rotate = this.getRandom(area.min, area.max)
       rotate += this.getRandom(5, 10) * 360
       let duration = parseInt(rotate / 450 * 10) / 10
-      this.$refs.rotate.style = '-webkit-transform: rotate('+rotate+'deg);-webkit-transition: -webkit-transform '+duration+'s  cubic-bezier(0.25,0.1,0.25,1) 0s'
+      this.$refs.rotate.style.webkitTransform = 'rotate('+rotate+'deg)'
+      this.$refs.rotate.style.transition = '-webkit-transform ' + duration + 's cubic-bezier(0.25,0.1,0.25,1) 0s'
+
+
       this.$refs.rotate.addEventListener('webkitTransitionEnd', () => {
         setTimeout(() => {
           this.awardResult = num
@@ -119,13 +123,8 @@ export default {
             this.awardCode = res.data.prize_code
           }
         }
+
         this.awardHandler(result)
-      }).catch((err) => {
-        console.log(err)
-        this.awardHandler({
-          isAwarded: false,
-          award: 0
-        })
       })
     },
     wxClose () {
