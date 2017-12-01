@@ -56,7 +56,7 @@ export default {
 .loading-icon {
   width: 100%;
   height: 82px;
-  background: url("../../static/img/loading_icon.png") no-repeat;
+  background: url("http://n.sinaimg.cn/gd/xiaopiqi/answer/loading_icon.png") no-repeat;
 }
 .loading-text {
   width: 100%;

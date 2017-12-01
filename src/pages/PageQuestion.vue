@@ -5,9 +5,9 @@
     <answer-index v-if="$root.route.name === 'share'" :metchCount="metchCount" :user="user" :author="author"></answer-index>
     <answer-question-list :questions="allQuestions" :questionId="questionId" :answerIndex="answerIndex" @selectAnswer="selectAnswer" @nextQuestion="nextQuestion"></answer-question-list>
     <div class="switch-box" v-if="$root.route.name === 'home'">
-      <a href="javascript:void(0);" class="change-btn" @touchstart="changeQuestion"><img src="../../static/img/answer_change_btn.png"></a>
-      <a href="javascript:void(0);" class="next-btn" @touchstart="nextQuestion" v-show="count < 4"><img src="../../static/img/answer_next_btn.png"></a>
-      <a href="javascript:void(0);" class="created-btn" @touchstart="nextQuestion" v-show="count >= 4"><img src="../../static/img/answer_created_btn.png"></a>
+      <a href="javascript:void(0);" class="change-btn" @touchstart="changeQuestion"><img src="http://n.sinaimg.cn/gd/xiaopiqi/answer/answer_change_btn.png"></a>
+      <a href="javascript:void(0);" class="next-btn" @touchstart="nextQuestion" v-show="count < 4"><img src="http://n.sinaimg.cn/gd/xiaopiqi/answer/answer_next_btn.png"></a>
+      <a href="javascript:void(0);" class="created-btn" @touchstart="nextQuestion" v-show="count >= 4"><img src="http://n.sinaimg.cn/gd/xiaopiqi/answer/answer_created_btn.png"></a>
     </div>
   </div>
 </template>
@@ -141,7 +141,7 @@ export default {
 
 <style scoped>
 .answer-create-title {
-  background: url("../../static/img/answer_create_title.png") 0 0 no-repeat;
+  background: url("http://n.sinaimg.cn/gd/xiaopiqi/answer/answer_create_title.png") 0 0 no-repeat;
   width: 394px;
   height: 110px;
   margin: 20px auto 0;

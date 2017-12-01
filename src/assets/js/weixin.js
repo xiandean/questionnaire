@@ -33,6 +33,7 @@ export default {
         ]
       })
       wx.ready(() => {
+        document.getElementById('bgMusic').play()
         this.updateShare()
       })
     }).catch((err) => {

@@ -35,6 +35,27 @@ html, body, #app {
     top: 0;
 }
 
+.music {
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    z-index: 99;
+    background: url("http://n.sinaimg.cn/gd/xiaopiqi/answer/music_icon.png") center center no-repeat;
+}
+.music.active {
+  animation: music 4s linear infinite;
+}
+@keyframes music {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 @keyframes girlStand {
     0% {
         transform: rotate(0deg);

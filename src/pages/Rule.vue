@@ -26,6 +26,6 @@ export default {
   top: 50%;
   margin-top: -407px;
   margin-left: -270px;
-  background: url("../../static/img/rule.png") no-repeat;
+  background: url("http://n.sinaimg.cn/gd/xiaopiqi/answer/rule.png") no-repeat;
 }
 </style>

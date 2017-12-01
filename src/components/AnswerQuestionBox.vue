@@ -20,7 +20,7 @@ export default {
 
 <style scoped>
 .answer-question-box {
-  background: url("../../static/img/answer_box_bg.png") 0 0 no-repeat;
+  background: url("http://n.sinaimg.cn/gd/xiaopiqi/answer/answer_box_bg.png") 0 0 no-repeat;
   width: 541px;
   height: 634px;
   position: absolute;
@@ -40,19 +40,19 @@ export default {
 }
 
 .answer-question-box .answer-question-btn-box > a:first-child {
-  background: url("../../static/img/a_btn_before_bg.png") 0 0 no-repeat;
+  background: url("http://n.sinaimg.cn/gd/xiaopiqi/answer/a_btn_before_bg.png") 0 0 no-repeat;
   margin-bottom: 10px;
 }
 
 .answer-question-box .answer-question-btn-box > a:first-child.active {
-  background-image: url("../../static/img/a_btn_after_bg.png");
+  background-image: url("http://n.sinaimg.cn/gd/xiaopiqi/answer/a_btn_after_bg.png");
 }
 
 .answer-question-box .answer-question-btn-box > a:last-child {
-  background: url("../../static/img/b_btn_before_bg.png") 0 0 no-repeat;
+  background: url("http://n.sinaimg.cn/gd/xiaopiqi/answer/b_btn_before_bg.png") 0 0 no-repeat;
 }
 
 .answer-question-box .answer-question-btn-box > a:last-child.active {
-  background-image: url("../../static/img/b_btn_after_bg.png");
+  background-image: url("http://n.sinaimg.cn/gd/xiaopiqi/answer/b_btn_after_bg.png");
 }
 </style>

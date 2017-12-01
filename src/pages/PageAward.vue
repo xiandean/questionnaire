@@ -156,10 +156,10 @@ export default {
   top: 116px;
 }
 .award-title:nth-child(1) {
-  background: url("../../static/img/award_title_01.png") no-repeat;
+  background: url("http://n.sinaimg.cn/gd/xiaopiqi/answer/award_title_01.png") no-repeat;
 }
 .award-title:nth-child(2) {
-  background: url("../../static/img/award_title_00.png") no-repeat;
+  background: url("http://n.sinaimg.cn/gd/xiaopiqi/answer/award_title_00.png") no-repeat;
 }
 .award-box {
   width: 626px;
@@ -168,7 +168,7 @@ export default {
   overflow: hidden;
   left: 4px;
   top: 248px;
-  background: url("../../static/img/award_bg.png") no-repeat;
+  background: url("http://n.sinaimg.cn/gd/xiaopiqi/answer/award_bg.png") no-repeat;
 }
 .award-rotate {
   width: 517px;
@@ -176,7 +176,7 @@ export default {
   position: absolute;
   left: 64px;
   top: 33px;
-  background: url("../../static/img/award_rotate.png") no-repeat;
+  background: url("http://n.sinaimg.cn/gd/xiaopiqi/answer/award_rotate.png") no-repeat;
 }
 .award-point {
   width: 162px;
@@ -184,7 +184,7 @@ export default {
   position: absolute;
   left: 241px;
   top: 192px;
-  background: url("../../static/img/award_point.png") no-repeat;
+  background: url("http://n.sinaimg.cn/gd/xiaopiqi/answer/award_point.png") no-repeat;
 }
 
 .award-result, .award-share {
@@ -203,7 +203,7 @@ export default {
   top: 50%;
   margin-left: -270px;
   margin-top: -288px;
-  background: url("../../static/img/award_result_non.png") no-repeat;
+  background: url("http://n.sinaimg.cn/gd/xiaopiqi/answer/award_result_non.png") no-repeat;
 }
 .award-result-win {
   width: 541px;
@@ -213,7 +213,7 @@ export default {
   top: 50%;
   margin-left: -270px;
   margin-top: -354px;
-  background: url("../../static/img/award_result_win.png") no-repeat;
+  background: url("http://n.sinaimg.cn/gd/xiaopiqi/answer/award_result_win.png") no-repeat;
 }
 .input-code {
   width: 352px;
@@ -241,6 +241,7 @@ export default {
   position: absolute;
   right: 10px;
   top: 10px;
-  background: url("../../static/img/share_tip.png") no-repeat;
+  z-index: 999;
+  background: url("http://n.sinaimg.cn/gd/xiaopiqi/answer/share_tip.png") no-repeat;
 }
 </style>

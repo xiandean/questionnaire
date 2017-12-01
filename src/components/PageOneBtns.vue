@@ -29,7 +29,7 @@ export default {
   position: absolute;
   left: 73px;
   top: 0;
-  background: url("../../static/img/p1_btn_create.png") no-repeat;
+  background: url("http://n.sinaimg.cn/gd/xiaopiqi/answer/p1_btn_create.png") no-repeat;
 }
 .btn-rule {
   width: 225px;
@@ -37,6 +37,6 @@ export default {
   position: absolute;
   left: 347px;
   top: 0;
-  background: url("../../static/img/p1_btn_rule.png") no-repeat;
+  background: url("http://n.sinaimg.cn/gd/xiaopiqi/answer/p1_btn_rule.png") no-repeat;
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-    <div class="guide-pic"><img src="../../static/img/guide.png" alt=""></div>
+    <div class="guide-pic"><img src="http://n.sinaimg.cn/gd/xiaopiqi/answer/guide.png" alt=""></div>
   </div>
 </template>
 

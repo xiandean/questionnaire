@@ -28,7 +28,7 @@ export default {
   width: 100%;
   height: 614px;
   position: relative;
-  background: url("../../static/img/p1_title_bg.png") no-repeat;
+  background: url("http://n.sinaimg.cn/gd/xiaopiqi/answer/p1_title_bg.png") no-repeat;
 }
 .girl-sit {
   width: 98px;
@@ -36,7 +36,7 @@ export default {
   position: absolute;
   left: 393px;
   top: 79px;
-  background: url("../../static/img/p1_girl_sit.png") no-repeat;
+  background: url("http://n.sinaimg.cn/gd/xiaopiqi/answer/p1_girl_sit.png") no-repeat;
 }
 .girl-stand {
   width: 134px;
@@ -44,7 +44,7 @@ export default {
   position: absolute;
   left: 114px;
   top: 393px;
-  background: url("../../static/img/p1_girl_stand.png") no-repeat;
+  background: url("http://n.sinaimg.cn/gd/xiaopiqi/answer/p1_girl_stand.png") no-repeat;
   animation: girlStand 1s ease-in-out 0s infinite alternate;
 }
 .title-words {
@@ -53,7 +53,7 @@ export default {
   position: absolute;
   left: 403px;
   top: 501px;
-  background: url("../../static/img/p1_title_words.png") no-repeat;
+  background: url("http://n.sinaimg.cn/gd/xiaopiqi/answer/p1_title_words.png") no-repeat;
 }
 .title-icon-01 {
   width: 62px;
@@ -61,7 +61,7 @@ export default {
   position: absolute;
   left: 75px;
   top: 350px;
-  background: url("../../static/img/p1_title_icon_01.png") no-repeat;
+  background: url("http://n.sinaimg.cn/gd/xiaopiqi/answer/p1_title_icon_01.png") no-repeat;
 }
 .title-icon-02 {
   width: 70px;
@@ -69,12 +69,12 @@ export default {
   position: absolute;
   left: 515px;
   top: 111px;
-  background: url("../../static/img/p1_title_icon_02.png") no-repeat;
+  background: url("http://n.sinaimg.cn/gd/xiaopiqi/answer/p1_title_icon_02.png") no-repeat;
 }
 .text {
   width: 358px;
   height: 142px;
   margin: 12px auto 0;
-  background: url("../../static/img/p1_text.png") no-repeat;
+  background: url("http://n.sinaimg.cn/gd/xiaopiqi/answer/p1_text.png") no-repeat;
 }
 </style>

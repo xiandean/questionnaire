@@ -31,11 +31,31 @@ if (!oid) {
 	}
 }
 
+function musicHandler () {
+  let musicWrap = document.getElementById('musicWrap')
+  let music = document.getElementById('bgMusic')
+  if (route.name === 'guide') {
+    music.pause()
+    musicWrap.classList.remove('active')
+  }
+  musicWrap.addEventListener('touchstart', () => {
+    if (music.paused) {
+      music.play()
+      musicWrap.classList.add('active')
+    } else {
+      music.pause()
+      musicWrap.classList.remove('active')
+    }
+  }, false)
+}
+
 weixin.bind(() => {
   if (route.name === 'share') {
     weixin.options.link = '/' + weixin.getQueryString('oid')
   }
   weixin.share()
+
+  musicHandler()
 
   weixin.getWeixinInfo()
   /* eslint-disable no-new */

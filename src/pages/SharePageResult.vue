@@ -9,8 +9,8 @@
       </div>
     </div>
     <div class="result-btn-box">
-      <a href="/"><img src="../../static/img/create_answer_btn.png"></a>
-      <a href="javascript:void(0);" @touchstart="togglePage()"><img src="../../static/img/lottery_btn.png"></a>
+      <a href="/"><img src="http://n.sinaimg.cn/gd/xiaopiqi/answer/create_answer_btn.png"></a>
+      <a href="javascript:void(0);" @touchstart="togglePage()"><img src="http://n.sinaimg.cn/gd/xiaopiqi/answer/lottery_btn.png"></a>
     </div>
   </div>
 </template>
@@ -61,13 +61,13 @@ export default {
 
 .answer-result .result-point {
   text-align: center;
-  background: url("../../static/img/result_point_bg.png") center no-repeat;
+  background: url("http://n.sinaimg.cn/gd/xiaopiqi/answer/result_point_bg.png") center no-repeat;
   width: 280px;
   margin: 0 auto 25px;
 }
 
 .answer-result .result-content {
-  background: url("../../static/img/result_content_bg.png") 0 0 no-repeat;
+  background: url("http://n.sinaimg.cn/gd/xiaopiqi/answer/result_content_bg.png") 0 0 no-repeat;
   width: 541px;
   height: 557px;
   margin: 0 auto 45px;
