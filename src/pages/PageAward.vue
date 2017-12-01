@@ -193,16 +193,15 @@ export default {
   position: absolute;
   left: 0;
   top: 0;
+  z-index: 999;
   background-color: rgba(0, 0, 0, 0.8);
 }
 .award-result-non {
-  width: 541px;
-  height: 476px;
+  width: 100%;
+  height: 763px;
   position: absolute;
-  left: 50%;
-  top: 50%;
-  margin-left: -270px;
-  margin-top: -288px;
+  left: 0;
+  top: 0;
   background: url("http://n.sinaimg.cn/gd/xiaopiqi/answer/award_result_non.png") no-repeat;
 }
 .award-result-win {
